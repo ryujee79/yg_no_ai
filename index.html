@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>양곡 온라인 시험실</title>
+  <link rel="stylesheet" href="./styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</head>
+<body>
+  <div id="app"></div>
+  <div id="toast" class="toast" aria-live="polite"></div>
+  <div id="fullscreen-lock" class="fullscreen-lock hidden">
+    <div class="lock-card">
+      <h2>시험 화면을 벗어났습니다</h2>
+      <p>전체화면으로 돌아와야 답안을 계속 작성할 수 있습니다.</p>
+      <button id="return-fullscreen" class="primary">전체화면으로 돌아가기</button>
+    </div>
+  </div>
+  <div id="pdf-stage" class="pdf-stage" aria-hidden="true"></div>
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
