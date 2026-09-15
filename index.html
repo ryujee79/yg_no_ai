@@ -16,7 +16,7 @@
 </head>
 <body>
   <div class="github-only-banner">
-    GitHub Pages 단독 모드입니다. 시험지·명단·답안은 현재 브라우저에만 저장되며 다른 PC·휴대폰과 자동 공유되지 않습니다.
+    GitHub Pages 단독 모드입니다. 관리자 명단·시험지·답안은 현재 브라우저에 저장되며 다른 PC와 자동 공유되지 않습니다.
   </div>
   <div id="app"></div>
   <div id="toast" class="toast" aria-live="polite"></div>
@@ -29,6 +29,8 @@
   </div>
   <div id="pdf-stage" class="pdf-stage" aria-hidden="true"></div>
   <script src="./github-local-api.js"></script>
+  <script src="./account-api.js"></script>
+  <script src="./auth-admin-overlay.js"></script>
   <script type="module" src="./app.js"></script>
 </body>
 </html>
