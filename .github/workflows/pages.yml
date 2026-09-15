@@ -28,7 +28,9 @@ jobs:
         run: |
           node --check github-local-api.js
           node --check account-api.js
-          node --check auth-admin-overlay.js
+          node --check student-auth-v2-api.js
+          node --check auth-flow-v2.js
+          node --check account-migration.js
           node --check app.js
       - name: Setup Pages
         uses: actions/configure-pages@v5
