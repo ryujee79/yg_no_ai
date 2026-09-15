@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "netlify dev",
+    "dev": "npx netlify dev",
     "build": "node -e \"console.log('Static site: no build step')\"",
     "typecheck": "tsc --noEmit"
   },
@@ -14,7 +14,6 @@
   },
   "devDependencies": {
     "@types/node": "latest",
-    "netlify-cli": "latest",
     "typescript": "latest"
   }
 }
