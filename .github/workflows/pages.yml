@@ -24,6 +24,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v6
+
       - name: Check browser scripts
         run: |
           node --check github-local-api.js
@@ -31,16 +32,42 @@ jobs:
           node --check student-auth-v2-api.js
           node --check auth-flow-v2.js
           node --check account-migration.js
+          node --check mutation-observer-guard.js
           node --check admin-branding-v3.js
           node --check app.js
+
+      - name: Build static Pages bundle
+        run: |
+          set -e
+          rm -rf _site
+          mkdir -p _site/vendor
+          cp *.html *.css *.js _site/
+          cp .nojekyll _site/ || true
+
+          npm install --prefix "$RUNNER_TEMP/yg-vendor" --no-save \
+            xlsx@0.18.5 \
+            jszip@3.10.1 \
+            pdfjs-dist@3.11.174 \
+            jspdf@2.5.1 \
+            html2canvas@1.4.1
+
+          cp "$RUNNER_TEMP/yg-vendor/node_modules/xlsx/dist/xlsx.full.min.js" _site/vendor/
+          cp "$RUNNER_TEMP/yg-vendor/node_modules/jszip/dist/jszip.min.js" _site/vendor/
+          cp "$RUNNER_TEMP/yg-vendor/node_modules/pdfjs-dist/build/pdf.min.js" _site/vendor/
+          cp "$RUNNER_TEMP/yg-vendor/node_modules/pdfjs-dist/build/pdf.worker.min.js" _site/vendor/
+          cp "$RUNNER_TEMP/yg-vendor/node_modules/jspdf/dist/jspdf.umd.min.js" _site/vendor/
+          cp "$RUNNER_TEMP/yg-vendor/node_modules/html2canvas/dist/html2canvas.min.js" _site/vendor/
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
         with:
           enablement: true
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v4
         with:
-          path: '.'
+          path: '_site'
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
