@@ -10,8 +10,14 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <style>
+    .github-only-banner{background:#fff7d6;border-bottom:1px solid #e8d58a;color:#5b4a12;padding:9px 16px;text-align:center;font-size:13px;line-height:1.5}
+  </style>
 </head>
 <body>
+  <div class="github-only-banner">
+    GitHub Pages 단독 모드입니다. 시험지·명단·답안은 현재 브라우저에만 저장되며 다른 PC·휴대폰과 자동 공유되지 않습니다.
+  </div>
   <div id="app"></div>
   <div id="toast" class="toast" aria-live="polite"></div>
   <div id="fullscreen-lock" class="fullscreen-lock hidden">
@@ -22,6 +28,7 @@
     </div>
   </div>
   <div id="pdf-stage" class="pdf-stage" aria-hidden="true"></div>
+  <script src="./github-local-api.js"></script>
   <script type="module" src="./app.js"></script>
 </body>
 </html>
