@@ -19,9 +19,13 @@ jobs:
         run: |
           node --check app.js
           node --check github-local-api.js
+          node --check account-api.js
+          node --check auth-admin-overlay.js
       - name: Verify required static files
         run: |
           test -f index.html
           test -f styles.css
           test -f app.js
           test -f github-local-api.js
+          test -f account-api.js
+          test -f auth-admin-overlay.js
