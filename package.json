@@ -5,13 +5,15 @@
   "type": "module",
   "scripts": {
     "dev": "netlify dev",
-    "build": "node -e \"console.log('Static site: no build step')\""
+    "build": "node -e \"console.log('Static site: no build step')\"",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@netlify/blobs": "latest",
     "@netlify/functions": "latest"
   },
   "devDependencies": {
+    "@types/node": "latest",
     "netlify-cli": "latest",
     "typescript": "latest"
   }
