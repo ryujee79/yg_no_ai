@@ -34,6 +34,8 @@ jobs:
           node --check account-migration.js
           node --check mutation-observer-guard.js
           node --check admin-branding-v3.js
+          node --check admin-list-controls.js
+          node --check student-roster-upload-v5.js
           node --check app.js
 
       - name: Build static Pages bundle
