@@ -20,7 +20,13 @@ jobs:
           node --check app.js
           node --check github-local-api.js
           node --check account-api.js
-          node --check auth-admin-overlay.js
+          node --check student-auth-v2-api.js
+          node --check account-migration.js
+          node --check auth-flow-v2.js
+          node --check mutation-observer-guard.js
+          node --check admin-branding-v3.js
+          node --check admin-list-controls.js
+          node --check student-roster-upload-v5.js
       - name: Verify required static files
         run: |
           test -f index.html
@@ -28,4 +34,10 @@ jobs:
           test -f app.js
           test -f github-local-api.js
           test -f account-api.js
-          test -f auth-admin-overlay.js
+          test -f student-auth-v2-api.js
+          test -f account-migration.js
+          test -f auth-flow-v2.js
+          test -f mutation-observer-guard.js
+          test -f admin-branding-v3.js
+          test -f admin-list-controls.js
+          test -f student-roster-upload-v5.js
